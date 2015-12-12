@@ -20,10 +20,14 @@ var timer = React.createClass({
     };
   },
   componentDidMount: function () {
+    var lastFormattedRunningFor;
     this.setInterval(
       () => {
-        var runningFor = moment().diff(this.state.timerStartedAt);
-        this.setState({ timeCounter: moment(runningFor).format('mm:ss') });
+        var runningFor = moment(moment().diff(this.state.timerStartedAt)).format('mm:ss');
+        if (runningFor != lastFormattedRunningFor) {
+          this.setState({ timeCounter: runningFor });
+          lastFormattedRunningFor = runningFor;
+        }
       }, 500
     );
   },
