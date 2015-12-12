@@ -15,17 +15,15 @@ var timer = React.createClass({
   mixins: [TimerMixin],
   getInitialState: function () {
     return {
-      timerStartedAt: undefined,
+      timerStartedAt: new Date(),
       timeCounter: '00:00'
     };
   },
   componentDidMount: function () {
     this.setInterval(
       () => {
-        if (this.state.timerStartedAt) {
-          var runningFor = moment().diff(this.state.timerStartedAt);
-          this.setState({ timeCounter: moment(runningFor).format('mm:ss') });
-        }
+        var runningFor = moment().diff(this.state.timerStartedAt);
+        this.setState({ timeCounter: moment(runningFor).format('mm:ss') });
       }, 500
     );
   },
@@ -36,8 +34,8 @@ var timer = React.createClass({
     return (
       <View style={styles.container}>
         <Text>{this.state.timeCounter}</Text>
-        <TouchableHighlight onPress={this._startTimer}>
-          <Text>Start Timer</Text>
+        <TouchableHighlight>
+          <Text>Pause</Text>
         </TouchableHighlight>
       </View>
     )

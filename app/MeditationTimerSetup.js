@@ -2,7 +2,9 @@
 
 var moment = require('moment');
 var React = require('react-native');
+var { Actions } = require('react-native-router-flux');
 var TimerMixin = require('react-timer-mixin');
+
 
 var {
   StyleSheet,
@@ -13,6 +15,7 @@ var {
 
 var NavigationTimerSetup = React.createClass({
   _start: function () {
+    Actions.CountdownMeditationTimer();
   },
   render: function () {
     return (
