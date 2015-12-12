@@ -11,7 +11,7 @@ var NewMeditationSession = React.createClass({
   render: function () {
     return (
       <Navigator
-        initialRoute={{name: 'My First Scene', index: 0}}
+        initialRoute={{}}
         renderScene={(route, navigator) =>
           <MeditationTimerSetup />
         }
