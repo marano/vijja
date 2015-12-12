@@ -34,9 +34,18 @@ var styles = StyleSheet.create({
     backgroundColor: '#F5FCFF',
   },
   option: {
-    fontSize: 30,
-    marginBottom: 10,
-  },
+    marginLeft: 10,
+    fontSize: 40,
+    borderWidth: 2,
+    borderRadius: 30,
+    textAlign: 'center',
+    paddingTop: 5,
+    paddingLeft: 2,
+    paddingRight: 2,
+    width: 60,
+    height: 60,
+    marginBottom: 5
+  }
 });
 
 module.exports = MeditationTimerLengthChooser;

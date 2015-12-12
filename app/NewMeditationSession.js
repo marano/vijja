@@ -21,19 +21,30 @@ module.exports = React.createClass({
     return (
       <View style={styles.container}>
         <View style={styles.alarmChooser}>
-          <Text style={{fontSize: 30}}>
+          <Text style={{fontSize: 40, paddingTop: 5}}>
             Alarm
           </Text>
-          <Text style={{fontSize: 30}} onPress={Actions.MeditationTimerLengthChooser}>
+          <Text
+            style={{
+              marginLeft: 10,
+              fontSize: 40,
+              borderWidth: 2,
+              borderRadius: 30,
+              textAlign: 'center',
+              paddingTop: 5,
+              paddingLeft: 2,
+              paddingRight: 2,
+              width: 60,
+              height: 60
+            }}
+            onPress={Actions.MeditationTimerLengthChooser}>
             { config.timerLength || 'No' }
           </Text>
         </View>
 
-        <TouchableHighlight onPress={this._start}>
-          <Text>
-            Start
-          </Text>
-        </TouchableHighlight>
+        <Text style={{fontSize: 40, marginTop: 20}} onPress={this._start}>
+          Start
+        </Text>
       </View>
     );
   },
